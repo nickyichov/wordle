@@ -1,21 +1,43 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link href="./output.css" rel="stylesheet">
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
-    </head>
-    <body class="flex flex-col items-center bg-black" x-data="{ word: [] }">
+<head>
+    <meta charset="utf-8">
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+<body class="bg-black" x-data="updateWord">
+    <div class="flex flex-col items-center">
         <div class="flex flex-col mt-5"
-             x-data="{ rows: [1 , 2, 3, 4, 5, 6], cols: { 0: word[0], 1: word[1], 2: word[2], 3: word[3], 4: word[4] } }">
+             x-data="{  }">
             <template x-for="row in rows">
-                <div class="flex justify-center mt-1 gap-1" id="col-1">
+                <div class="flex justify-center mt-1 gap-1">
                     <template x-for="(value, index) in cols">
                         <div class="bg-gray-500 w-14 h-14 flex justify-center items-center">
-                            <div class="text-4xl font-bold text-white" x-text="word[index]"></div>
+                            <template x-if="row === count">
+                                <div class="text-4xl font-bold text-white" x-text="word[index]"></div>
+                            </template>
                         </div>
                     </template>
                 </div>
             </template>
+            <div class="my-10">
+                <template x-for="row in rows">
+                    <div class="flex justify-center mt-1 gap-1">
+                        <template x-for="(value, index) in cols">
+                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center">
+                                <template x-if="row === 1">
+                                    <div class="text-4xl font-bold text-white" x-text="buffer[0][index]"></div>
+                                </template>
+                                <template x-if="row === 2">
+                                    <div class="text-4xl font-bold text-white" x-text="buffer[1][index]"></div>
+                                </template>
+                                <template x-if="row === 3">
+                                    <div class="text-4xl font-bold text-white" x-text="buffer[2][index]"></div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
         </div>
         <div class="mt-15">
             <input class="border border-white text-white"
@@ -23,5 +45,32 @@
                    x-model="word"
                    maxlength="5">
         </div>
-    </body>
+        <button class="bg-red-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="increase()">
+            increase
+        </button>
+    </div>
+</body>
 </html>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('updateWord', () => ({
+            count: 1,
+            word: [],
+            buffer: [],
+            rows: [1 , 2, 3],
+            cols: [1, 2, 3, 4, 5],
+
+            increase() {
+                if (this.word.length < 5) {
+                    console.log('enter full word');
+                } else {
+                    this.count++;
+                    this.buffer.push(this.word);
+                    this.buffer[this.count-2].split('');
+                    this.word = '';
+                }
+            }
+        }))
+    })
+</script>
