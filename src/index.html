@@ -11,7 +11,7 @@
                 <template x-for="row in rows">
                     <div class="flex justify-center mt-1 gap-1">
                         <template x-for="(value, index) in cols">
-                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center z-10">
+                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center">
                                 <template x-if="row === count">
                                     <div class="text-4xl font-bold text-white relative z-20" x-text="word[index]"></div>
                                 </template>
