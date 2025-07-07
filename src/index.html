@@ -4,16 +4,16 @@
     <link href="./output.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
-<body class="bg-black" x-data="updateWord">
+<body class="bg-gray-900" x-data="updateWord">
     <div class="flex flex-col items-center relative">
         <div class="flex flex-col mt-5">
             <div class="relative">
                 <template x-for="row in rows">
                     <div class="flex justify-center mt-1 gap-1">
                         <template x-for="(value, index) in cols">
-                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center">
+                            <div class="w-14 h-14 flex justify-center items-center">
                                 <template x-if="row === count">
-                                    <div class="text-4xl font-bold text-white relative z-20" x-text="word[index]"></div>
+                                    <div class="text-3xl font-bold text-white uppercase relative z-20" x-text="word[index]"></div>
                                 </template>
                             </div>
                         </template>
@@ -24,26 +24,23 @@
                 <template x-for="row in rows">
                     <div class="flex justify-center mt-1 gap-1">
                         <template x-for="(value, index) in cols">
-                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center" :id="$id('word-'+ [row+1] +'-input')" x-data="console.log('word-'+ row +'-input')">
-                                <div class="text-4xl font-bold text-white" x-text="buffer[row][index]"></div>
+                            <div class="border border-gray-500 w-14 h-14 flex justify-center items-center" :id="$id('word-'+ [row+1] +'-input')">
+                                <div class="text-3xl font-bold text-white uppercase" x-text="buffer[row][index]"></div>
                             </div>
                         </template>
                     </div>
                 </template>
             </div>
         </div>
-        <div class="mt-15">
+        <div class="mt-8">
             <input class="border border-white text-white"
                    id="textInput"
                    type="text"
                    x-model="word"
                    maxlength="5">
         </div>
-        <button class="bg-red-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="increase()">
-            increase
-        </button>
-        <button class="bg-blue-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="checkWord()">
-            check
+        <button class="bg-red-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="enterWord()">
+            Enter word
         </button>
         <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
             <span>You guessed the word</span>
@@ -61,26 +58,25 @@
             count: 0,
             word: [],
             buffer: [],
-            rows: [0 , 1, 2],
+            rows: [0, 1, 2, 3, 4, 5],
             cols: [0, 1, 2, 3, 4],
             correctWord: ['kotka'],
             checker: false,
             outOfTries: false,
 
-            increase() {
+            enterWord() {
                 if (this.word.length < 5) {
                     console.log('enter full word');
                 } else {
                     this.count++;
                     this.buffer.push(this.word);
-                    this.buffer[this.count-1].split('');
 
                     if (this.buffer[this.count-1] === this.correctWord[0]) {
                         this.checker = true;
                         document.getElementById('textInput').disabled = true;
                     }
 
-                    if (this.count > 2 && this.buffer[this.count-1] !== this.correctWord[0]) {
+                    if (this.count > 5 && this.buffer[this.count-1] !== this.correctWord[0]) {
                         this.outOfTries = true;
                         document.getElementById('textInput').disabled = true;
                     }
@@ -92,10 +88,19 @@
             },
 
             checkWord() {
+                const correctWordArray = this.correctWord[0].split('');
+
                 for (let i = 1; i <= 5; i++) {
-                    if (this.correctWord[0][i-1] === this.buffer[this.count-1][i-1]) {
-                        if (this.buffer[this.count-1][i-1]) {
-                            document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-green-500');
+                    let filteredWord = correctWordArray.filter(value => this.buffer[this.count-1].split('').includes(value));
+                    for (let j = 0; j < filteredWord.length; j++) {
+                        if (this.correctWord[0][i - 1] === this.buffer[this.count - 1][i - 1]) {
+                            if (this.buffer[this.count - 1][i - 1]) {
+                                document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-green-500');
+                            }
+                        } else if (this.buffer[this.count - 1].split('')[i - 1] === filteredWord[j]) {
+                            document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-yellow-500');
+                        } else {
+                            document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-gray-500');
                         }
                     }
                 }
