@@ -26,13 +26,13 @@
                         <template x-for="(value, index) in cols">
                             <div class="bg-gray-500 w-14 h-14 flex justify-center items-center">
                                 <template x-if="row === 0">
-                                    <div class="text-4xl font-bold text-white" x-text="buffer[0][index]"></div>
+                                    <div class="text-4xl font-bold text-white" :id="$id('word-1-input')" x-text="buffer[0][index]"></div>
                                 </template>
                                 <template x-if="row === 1">
-                                    <div class="text-4xl font-bold text-white" x-text="buffer[1][index]"></div>
+                                    <div class="text-4xl font-bold text-white" :id="$id('word-2-input')" x-text="buffer[1][index]"></div>
                                 </template>
                                 <template x-if="row === 2">
-                                    <div class="text-4xl font-bold text-white" x-text="buffer[2][index]"></div>
+                                    <div class="text-4xl font-bold text-white" :id="$id('word-3-input')" x-text="buffer[2][index]"></div>
                                 </template>
                             </div>
                         </template>
@@ -74,7 +74,6 @@
             correctWord: ['kotka'],
             checker: false,
             outOfTries: false,
-            match: false,
 
             increase() {
                 if (this.word.length < 5) {
@@ -101,10 +100,12 @@
             },
 
             checkWord() {
-                for (let i = 0; i <= 4; i++) {
-                    if (this.correctWord[0][i] === this.buffer[this.count-1][i]) {
-                        this.match = true;
-                        console.log('match', this.buffer[this.count-1][i])
+                for (let i = 1; i <= 5; i++) {
+                    if (this.correctWord[0][i-1] === this.buffer[this.count-1][i-1]) {
+                        console.log(this.count);
+                        if (this.buffer[this.count-1][i-1]) {
+                            document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-green-500');
+                        }
                     }
                 }
             }
