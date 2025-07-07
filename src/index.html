@@ -24,7 +24,7 @@
                 <template x-for="row in rows">
                     <div class="flex justify-center mt-1 gap-1">
                         <template x-for="(value, index) in cols">
-                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center" :id="$id('word-'+ row +'-input')" x-data="console.log('word-'+ row +'-input')">
+                            <div class="bg-gray-500 w-14 h-14 flex justify-center items-center" :id="$id('word-'+ [row+1] +'-input')" x-data="console.log('word-'+ row +'-input')">
                                 <div class="text-4xl font-bold text-white" x-text="buffer[row][index]"></div>
                             </div>
                         </template>
