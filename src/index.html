@@ -50,6 +50,9 @@
         <button class="bg-red-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="increase()">
             increase
         </button>
+        <button class="bg-blue-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="checkWord()">
+            check
+        </button>
         <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
             <span>You guessed the word</span>
         </div>
@@ -68,9 +71,10 @@
             buffer: [],
             rows: [0 , 1, 2],
             cols: [0, 1, 2, 3, 4],
-            correctWord: 'kotka',
+            correctWord: ['kotka'],
             checker: false,
             outOfTries: false,
+            match: false,
 
             increase() {
                 if (this.word.length < 5) {
@@ -80,17 +84,28 @@
                     this.buffer.push(this.word);
                     this.buffer[this.count-1].split('');
 
-                    if (this.buffer[this.count-1] === this.correctWord) {
+                    if (this.buffer[this.count-1] === this.correctWord[0]) {
                         this.checker = true;
                         document.getElementById('textInput').disabled = true;
                     }
 
-                    if (this.count > 2 && this.buffer[this.count-1] !== this.correctWord) {
+                    if (this.count > 2 && this.buffer[this.count-1] !== this.correctWord[0]) {
                         this.outOfTries = true;
                         document.getElementById('textInput').disabled = true;
                     }
 
                     this.word = '';
+
+                    this.checkWord();
+                }
+            },
+
+            checkWord() {
+                for (let i = 0; i <= 4; i++) {
+                    if (this.correctWord[0][i] === this.buffer[this.count-1][i]) {
+                        this.match = true;
+                        console.log('match', this.buffer[this.count-1][i])
+                    }
                 }
             }
         }))
