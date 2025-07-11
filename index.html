@@ -39,9 +39,7 @@
                    x-model="word"
                    maxlength="5">
         </div>
-        <button class="bg-red-500 text-white p-4 my-4 rounded-md cursor-pointer" x-on:click="enterWord()">
-            Enter word
-        </button>
+        <div @keydown.enter.window="submitWord()"></div>
         <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
             <span>You guessed the word</span>
         </div>
@@ -64,7 +62,7 @@
             checker: false,
             outOfTries: false,
 
-            enterWord() {
+            submitWord() {
                 if (this.word.length < 5) {
                     console.log('enter full word');
                 } else {
