@@ -60,7 +60,7 @@
             buffer: [],
             rows: [0, 1, 2, 3, 4, 5],
             cols: [0, 1, 2, 3, 4],
-            correctWord: [],
+            correctWord: ['kotka'],
             checker: false,
             outOfTries: false,
 
@@ -91,6 +91,7 @@
                 const correctWordArray = this.correctWord[0].split('');
 
                 for (let i = 1; i <= 5; i++) {
+                    document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-gray-500');
                     let filteredWord = correctWordArray.filter(value => this.buffer[this.count-1].split('').includes(value));
                     for (let j = 0; j < filteredWord.length; j++) {
                         if (this.correctWord[0][i - 1] === this.buffer[this.count - 1][i - 1]) {
@@ -99,8 +100,6 @@
                             }
                         } else if (this.buffer[this.count - 1].split('')[i - 1] === filteredWord[j]) {
                             document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-yellow-500');
-                        } else {
-                            document.getElementById('word-' + this.count + '-input-' + i).classList.add('bg-gray-500');
                         }
                     }
                 }
