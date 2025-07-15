@@ -184,12 +184,10 @@
 
                     if (this.buffer[this.count-1] === this.correctWord[0]) {
                         this.checker = true;
-                        document.getElementById('textInput').disabled = true;
                     }
 
                     if (this.count > 5 && this.buffer[this.count-1] !== this.correctWord[0]) {
                         this.outOfTries = true;
-                        document.getElementById('textInput').disabled = true;
                     }
 
                     console.log(this.word)
