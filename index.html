@@ -32,13 +32,7 @@
                 </template>
             </div>
         </div>
-        <div class="mt-8">
-            <input class="border border-white text-white"
-                   id="textInput"
-                   type="text"
-                   x-model="word"
-                   maxlength="5">
-        </div>
+
         <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
             <span>You guessed the word</span>
         </div>
@@ -49,81 +43,81 @@
         <div class="my-4 flex flex-col items-center gap-1">
             <div class="flex gap-1">
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.q.window="console.log('q')"
+                     @keydown.q.window="word.push('q')"
                      x-text="'q'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.w.window="console.log('w')"
+                     @keydown.w.window="word.push('w')"
                      x-text="'w'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.e.window="console.log('e')"
+                     @keydown.e.window="word.push('e')"
                      x-text="'e'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.r.window="console.log('r')"
+                     @keydown.r.window="word.push('r')"
                      x-text="'r'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.t.window="console.log('t')"
+                     @keydown.t.window="word.push('t')"
                      x-text="'t'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.y.window="console.log('y')"
+                     @keydown.y.window="word.push('y')"
                      x-text="'y'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.u.window="console.log('u')"
+                     @keydown.u.window="word.push('u')"
                      x-text="'u'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.i.window="console.log('i')"
+                     @keydown.i.window="word.push('i')"
                      x-text="'i'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.o.window="console.log('o')"
+                     @keydown.o.window="word.push('o')"
                      x-text="'o'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.p.window="console.log('p')"
+                     @keydown.p.window="word.push('p')"
                      x-text="'p'">
                 </div>
             </div>
             <div class="flex gap-1">
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.a.window="console.log('a')"
+                     @keydown.a.window="word.push('a')"
                      x-text="'a'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.s.window="console.log('s')"
+                     @keydown.s.window="word.push('s')"
                      x-text="'s'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.d.window="console.log('d')"
+                     @keydown.d.window="word.push('d')"
                      x-text="'d'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.f.window="console.log('f')"
+                     @keydown.f.window="word.push('f')"
                      x-text="'f'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.g.window="console.log('g')"
+                     @keydown.g.window="word.push('g')"
                      x-text="'g'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.h.window="console.log('h')"
+                     @keydown.h.window="word.push('h')"
                      x-text="'h'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.j.window="console.log('j')"
+                     @keydown.j.window="word.push('j')"
                      x-text="'j'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.k.window="console.log('k')"
+                     @keydown.k.window="word.push('k')"
                      x-text="'k'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.l.window="console.log('l')"
+                     @keydown.l.window="word.push('l')"
                      x-text="'l'">
                 </div>
             </div>
@@ -132,34 +126,35 @@
                      @keydown.enter.window="submitWord()" x-text="'enter'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.z.window="console.log('z')"
+                     @keydown.z.window="word.push('z')"
                      x-text="'z'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.x.window="console.log('x')"
+                     @keydown.x.window="word.push('x')"
                      x-text="'x'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.c.window="console.log('c')"
+                     @keydown.c.window="word.push('c')"
                      x-text="'c'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.v.window="console.log('v')"
+                     @keydown.v.window="word.push('v')"
                      x-text="'v'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.b.window="console.log('b')"
+                     @keydown.b.window="word.push('b')"
                      x-text="'b'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.n.window="console.log('n')"
+                     @keydown.n.window="word.push('n')"
                      x-text="'n'">
                 </div>
                 <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
-                     @keydown.m.window="console.log('m')"
+                     @keydown.m.window="word.push('m')"
                      x-text="'m'">
                 </div>
                 <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
+                     x-on:click="console.log(word.pop())"
                      x-text="'del'">
                 </div>
             </div>
@@ -185,7 +180,7 @@
                     console.log('enter full word');
                 } else {
                     this.count++;
-                    this.buffer.push(this.word);
+                    this.buffer.push(this.word.toString().replace(/,/g, ''));
 
                     if (this.buffer[this.count-1] === this.correctWord[0]) {
                         this.checker = true;
@@ -197,7 +192,9 @@
                         document.getElementById('textInput').disabled = true;
                     }
 
-                    this.word = '';
+                    console.log(this.word)
+
+                    this.word = [];
 
                     this.checkWord();
                 }
