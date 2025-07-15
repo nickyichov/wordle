@@ -39,12 +39,130 @@
                    x-model="word"
                    maxlength="5">
         </div>
-        <div @keydown.enter.window="submitWord()"></div>
         <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
             <span>You guessed the word</span>
         </div>
         <div class="bg-red-500 text-white p-4 my-4 rounded-md" x-show="outOfTries">
             <span>You ran out of tries</span>
+        </div>
+
+        <div class="my-4 flex flex-col items-center gap-1">
+            <div class="flex gap-1">
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.q.window="console.log('q')"
+                     x-text="'q'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.w.window="console.log('w')"
+                     x-text="'w'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.e.window="console.log('e')"
+                     x-text="'e'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.r.window="console.log('r')"
+                     x-text="'r'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.t.window="console.log('t')"
+                     x-text="'t'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.y.window="console.log('y')"
+                     x-text="'y'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.u.window="console.log('u')"
+                     x-text="'u'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.i.window="console.log('i')"
+                     x-text="'i'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.o.window="console.log('o')"
+                     x-text="'o'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.p.window="console.log('p')"
+                     x-text="'p'">
+                </div>
+            </div>
+            <div class="flex gap-1">
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.a.window="console.log('a')"
+                     x-text="'a'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.s.window="console.log('s')"
+                     x-text="'s'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.d.window="console.log('d')"
+                     x-text="'d'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.f.window="console.log('f')"
+                     x-text="'f'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.g.window="console.log('g')"
+                     x-text="'g'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.h.window="console.log('h')"
+                     x-text="'h'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.j.window="console.log('j')"
+                     x-text="'j'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.k.window="console.log('k')"
+                     x-text="'k'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.l.window="console.log('l')"
+                     x-text="'l'">
+                </div>
+            </div>
+            <div class="flex gap-1">
+                <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.enter.window="submitWord()" x-text="'enter'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.z.window="console.log('z')"
+                     x-text="'z'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.x.window="console.log('x')"
+                     x-text="'x'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.c.window="console.log('c')"
+                     x-text="'c'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.v.window="console.log('v')"
+                     x-text="'v'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.b.window="console.log('b')"
+                     x-text="'b'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.n.window="console.log('n')"
+                     x-text="'n'">
+                </div>
+                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                     @keydown.m.window="console.log('m')"
+                     x-text="'m'">
+                </div>
+                <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
+                     x-text="'del'">
+                </div>
+            </div>
         </div>
     </div>
 </body>
