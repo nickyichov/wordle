@@ -4,7 +4,7 @@
     <link href="src/output.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
-<body class="bg-gray-900" x-data="updateWord">
+<body class="bg-gray-900" x-data="updateWord"  @keypress="key = $event">
     <div class="flex flex-col items-center relative" x-init="getWord()">
         <div class="flex flex-col mt-5">
             <div class="relative">
@@ -40,83 +40,83 @@
             <span>You ran out of tries</span>
         </div>
 
-        <div class="my-4 flex flex-col items-center gap-1">
+        <div id="keyboard" class="my-4 flex flex-col items-center gap-1">
             <div class="flex gap-1">
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.q.window="word.length < 5 ? word.push('q') : ''"
                      x-text="'q'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.w.window="word.length < 5 ? word.push('w'): ''"
                      x-text="'w'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.e.window="word.length < 5 ? word.push('e') : ''"
                      x-text="'e'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.r.window="word.length < 5 ? word.push('r') : ''"
                      x-text="'r'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.t.window="word.length < 5 ? word.push('t') : ''"
                      x-text="'t'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.y.window="word.length < 5 ? word.push('y') : ''"
                      x-text="'y'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.u.window="word.length < 5 ? word.push('u') : ''"
                      x-text="'u'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.i.window="word.length < 5 ? word.push('i') : ''"
                      x-text="'i'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.o.window="word.length < 5 ? word.push('o') : ''"
                      x-text="'o'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.p.window="word.length < 5 ? word.push('p') : ''"
                      x-text="'p'">
                 </div>
             </div>
             <div class="flex gap-1">
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.a.window="word.length < 5 ? word.push('a') : ''"
                      x-text="'a'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.s.window="word.length < 5 ? word.push('s') : ''"
                      x-text="'s'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.d.window="word.length < 5 ? word.push('d') : ''"
                      x-text="'d'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.f.window="word.length < 5 ? word.push('f') : ''"
                      x-text="'f'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.g.window="word.length < 5 ? word.push('g') : ''"
                      x-text="'g'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.h.window="word.length < 5 ? word.push('h') : ''"
                      x-text="'h'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.j.window="word.length < 5 ? word.push('j') : ''"
                      x-text="'j'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.k.window="word.length < 5 ? word.push('k') : ''"
                      x-text="'k'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.l.window="word.length < 5 ? word.push('l') : ''"
                      x-text="'l'">
                 </div>
@@ -125,31 +125,31 @@
                 <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
                      @keydown.enter.window="submitWord()" x-text="'enter'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.z.window="word.length < 5 ? word.push('z') : ''"
                      x-text="'z'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.x.window="word.length < 5 ? word.push('x') : ''"
                      x-text="'x'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.c.window="word.length < 5 ? word.push('c') : ''"
                      x-text="'c'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.v.window="word.length < 5 ? word.push('v') : ''"
                      x-text="'v'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.b.window="word.length < 5 ? word.push('b') : ''"
                      x-text="'b'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.n.window="word.length < 5 ? word.push('n') : ''"
                      x-text="'n'">
                 </div>
-                <div class="text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center"
+                <div class="letter"
                      @keydown.m.window="word.length < 5 ? word.push('m') : ''"
                      x-text="'m'">
                 </div>
@@ -174,6 +174,29 @@
             correctWord: ['kotka'],
             checker: false,
             outOfTries: false,
+            key: 0,
+
+            init() {
+                Alpine.effect(() => {
+                    const currentKey = this.key.keyCode;
+
+                    const letters = document.getElementsByClassName("letter");
+                    document.body.addEventListener("keydown", (e)=>{
+                        for (let i = 0; i < letters.length; i++) {
+                            if(e.keyCode === currentKey-32) {
+                                letters[i].style.background = 'red';
+                            }
+                        }
+                    })
+                    document.addEventListener("keyup", (e)=>{
+                        for (let i = 0; i < letters.length; i++) {
+                            if(e.keyCode === currentKey-32) {
+                                letters[i].removeAttribute('style');
+                            }
+                        }
+                    })
+                })
+            },
 
             submitWord() {
                 if (this.word.length < 5) {
@@ -184,6 +207,7 @@
 
                     if (this.buffer[this.count-1] === this.correctWord[0]) {
                         this.checker = true;
+                        document.getElementById('keyboard').setAttribute('x-ignore', "");
                     }
 
                     if (this.count > 5 && this.buffer[this.count-1] !== this.correctWord[0]) {

@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.letter {
+    @apply text-white text-xl font-semibold bg-zinc-500 w-12 h-16 rounded-md uppercase flex justify-center items-center transition-all;
+}
