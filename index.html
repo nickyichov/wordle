@@ -42,119 +42,118 @@
 
         <div id="keyboard" class="my-4 flex flex-col items-center gap-1">
             <div class="flex gap-1">
-                <div class="letter"
+                <div id="113" class="letter"
                      @keydown.q.window="word.length < 5 ? word.push('q') : ''"
                      x-text="'q'">
                 </div>
-                <div class="letter"
+                <div id="119" class="letter"
                      @keydown.w.window="word.length < 5 ? word.push('w'): ''"
                      x-text="'w'">
                 </div>
-                <div class="letter"
+                <div id="101" class="letter"
                      @keydown.e.window="word.length < 5 ? word.push('e') : ''"
                      x-text="'e'">
                 </div>
-                <div class="letter"
+                <div id="114" class="letter"
                      @keydown.r.window="word.length < 5 ? word.push('r') : ''"
                      x-text="'r'">
                 </div>
-                <div class="letter"
+                <div id="116" class="letter"
                      @keydown.t.window="word.length < 5 ? word.push('t') : ''"
                      x-text="'t'">
                 </div>
-                <div class="letter"
+                <div id="121" class="letter"
                      @keydown.y.window="word.length < 5 ? word.push('y') : ''"
                      x-text="'y'">
                 </div>
-                <div class="letter"
+                <div id="117" class="letter"
                      @keydown.u.window="word.length < 5 ? word.push('u') : ''"
                      x-text="'u'">
                 </div>
-                <div class="letter"
+                <div id="105"class="letter"
                      @keydown.i.window="word.length < 5 ? word.push('i') : ''"
                      x-text="'i'">
                 </div>
-                <div class="letter"
+                <div id="111" class="letter"
                      @keydown.o.window="word.length < 5 ? word.push('o') : ''"
                      x-text="'o'">
                 </div>
-                <div class="letter"
+                <div id="112" class="letter"
                      @keydown.p.window="word.length < 5 ? word.push('p') : ''"
                      x-text="'p'">
                 </div>
             </div>
             <div class="flex gap-1">
-                <div class="letter"
+                <div id="97" class="letter"
                      @keydown.a.window="word.length < 5 ? word.push('a') : ''"
                      x-text="'a'">
                 </div>
-                <div class="letter"
+                <div id="115" class="letter"
                      @keydown.s.window="word.length < 5 ? word.push('s') : ''"
                      x-text="'s'">
                 </div>
-                <div class="letter"
+                <div id="100" class="letter"
                      @keydown.d.window="word.length < 5 ? word.push('d') : ''"
                      x-text="'d'">
                 </div>
-                <div class="letter"
+                <div id="102" class="letter"
                      @keydown.f.window="word.length < 5 ? word.push('f') : ''"
                      x-text="'f'">
                 </div>
-                <div class="letter"
+                <div id="103" class="letter"
                      @keydown.g.window="word.length < 5 ? word.push('g') : ''"
                      x-text="'g'">
                 </div>
-                <div class="letter"
+                <div id="104" class="letter"
                      @keydown.h.window="word.length < 5 ? word.push('h') : ''"
                      x-text="'h'">
                 </div>
-                <div class="letter"
+                <div id="106" class="letter"
                      @keydown.j.window="word.length < 5 ? word.push('j') : ''"
                      x-text="'j'">
                 </div>
-                <div class="letter"
+                <div id="107" class="letter"
                      @keydown.k.window="word.length < 5 ? word.push('k') : ''"
                      x-text="'k'">
                 </div>
-                <div class="letter"
+                <div id="108" class="letter"
                      @keydown.l.window="word.length < 5 ? word.push('l') : ''"
                      x-text="'l'">
                 </div>
             </div>
             <div class="flex gap-1">
-                <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
+                <div id="13" class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
                      @keydown.enter.window="submitWord()" x-text="'enter'">
                 </div>
-                <div class="letter"
+                <div id="122" class="letter"
                      @keydown.z.window="word.length < 5 ? word.push('z') : ''"
                      x-text="'z'">
                 </div>
-                <div class="letter"
+                <div id="120" class="letter"
                      @keydown.x.window="word.length < 5 ? word.push('x') : ''"
                      x-text="'x'">
                 </div>
-                <div class="letter"
+                <div id="99" class="letter"
                      @keydown.c.window="word.length < 5 ? word.push('c') : ''"
                      x-text="'c'">
                 </div>
-                <div class="letter"
+                <div id="118" class="letter"
                      @keydown.v.window="word.length < 5 ? word.push('v') : ''"
                      x-text="'v'">
                 </div>
-                <div class="letter"
+                <div id="98" class="letter"
                      @keydown.b.window="word.length < 5 ? word.push('b') : ''"
                      x-text="'b'">
                 </div>
-                <div class="letter"
+                <div id="110" class="letter"
                      @keydown.n.window="word.length < 5 ? word.push('n') : ''"
                      x-text="'n'">
                 </div>
-                <div class="letter"
+                <div id="109" class="letter"
                      @keydown.m.window="word.length < 5 ? word.push('m') : ''"
                      x-text="'m'">
                 </div>
                 <div class="text-white text-sm font-semibold bg-zinc-500 w-20 h-16 rounded-md uppercase flex justify-center items-center"
-                     x-on:click="console.log(word.pop())"
                      x-text="'del'">
                 </div>
             </div>
@@ -179,20 +178,18 @@
             init() {
                 Alpine.effect(() => {
                     const currentKey = this.key.keyCode;
+                    const currentId = this.key.keyCode;
 
-                    const letters = document.getElementsByClassName("letter");
+                    const letters = document.getElementById(currentId);
                     document.body.addEventListener("keydown", (e)=>{
-                        for (let i = 0; i < letters.length; i++) {
-                            if(e.keyCode === currentKey-32) {
-                                letters[i].style.background = 'red';
-                            }
+                        if (e.keyCode === currentKey - 32) {
+                            letters.style.background = '#52525b';
+                            letters.style.border = 'solid 2px'
                         }
                     })
                     document.addEventListener("keyup", (e)=>{
-                        for (let i = 0; i < letters.length; i++) {
-                            if(e.keyCode === currentKey-32) {
-                                letters[i].removeAttribute('style');
-                            }
+                        if (e.keyCode === currentKey - 32) {
+                            letters.removeAttribute('style');
                         }
                     })
                 })
