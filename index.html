@@ -4,7 +4,7 @@
     <link href="src/output.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
-<body class="bg-gray-900" x-data="updateWord"  @keypress="key = $event">
+<body class="bg-gray-900 relative" x-data="updateWord"  @keypress="key = $event">
     <div class="flex flex-col items-center relative" x-init="getWord()">
         <div class="flex flex-col mt-5">
             <div class="relative">
@@ -31,13 +31,6 @@
                     </div>
                 </template>
             </div>
-        </div>
-
-        <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-show="checker">
-            <span>You guessed the word</span>
-        </div>
-        <div class="bg-red-500 text-white p-4 my-4 rounded-md" x-show="outOfTries">
-            <span>You ran out of tries</span>
         </div>
 
         <div id="keyboard" class="my-4 flex flex-col items-center gap-1">
@@ -160,6 +153,22 @@
             </div>
         </div>
     </div>
+    <template x-if="checker || outOfTries">
+        <div class="absolute w-full h-screen bg-gray-700/80 top-0 z-50">
+            <div class="flex justify-center items-center h-8/12">
+                <div class="bg-gray-200 opacity-full w-[40rem] h-96">
+                    <div class="flex justify-center items-center h-full flex-col gap-4" x-show="checker">
+                        <div class="bg-green-500 text-white p-4 my-4 rounded-md" x-text="'You guessed the word'"></div>
+                        <button class="bg-red-500 p-4 text-white rounded-md" x-on:click="window.location.reload()">Play again</button>
+                    </div>
+                    <div class="flex justify-center items-center h-full flex-col gap-4" x-show="outOfTries">
+                        <div class="bg-red-500 text-white p-4 my-4 rounded-md" x-text="'You ran out of tries'"></div>
+                        <button class="bg-red-500 p-4 text-white rounded-md" x-on:click="window.location.reload()">Play again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
 </body>
 </html>
 
