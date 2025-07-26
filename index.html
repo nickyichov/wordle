@@ -164,8 +164,17 @@
                         <button class="bg-green-500 py-4 px-8 text-white font-bold rounded-full" x-on:click="window.location.reload()">Play again</button>
                     </div>
                     <div class="flex justify-around items-center h-full flex-col gap-4" x-show="outOfTries">
-                        <div>
-                            <span class="text-2xl font-semibold">You ran out of tries!</span>
+                        <div class="flex flex-col gap-8 items-center">
+                            <span class="text-2xl font-semibold">You ran out of tries</span>
+                            <div class="flex flex-col gap-4 items-center">
+                                <span class="text-2xl" x-text="'The correct word is'"></span>
+                                <div class="flex">
+                                    <template x-for="correctLetters in correctWord[0]">
+                                        <span class="border border-gray-500 bg-green-500 text-white w-12 h-12 text-4xl text-center uppercase mx-0.5"
+                                              x-text="correctLetters"></span>
+                                    </template>
+                                </div>
+                            </div>
                         </div>
                         <button class="bg-green-500 py-4 px-8 text-white font-bold rounded-full" x-on:click="window.location.reload()">Play again</button>
                     </div>
@@ -184,7 +193,7 @@
             buffer: [],
             rows: [0, 1, 2, 3, 4, 5],
             cols: [0, 1, 2, 3, 4],
-            correctWord: ['kotka'],
+            correctWord: [],
             checker: false,
             outOfTries: false,
             key: 0,
@@ -225,8 +234,6 @@
                         this.outOfTries = true;
                     }
 
-                    console.log(this.word)
-
                     this.word = [];
 
                     this.checkWord();
@@ -261,8 +268,6 @@
                 } catch (error) {
                     console.log(error.message);
                 }
-
-                console.log(this.correctWord);
             }
         }))
     })
