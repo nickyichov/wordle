@@ -211,6 +211,9 @@
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
+  .mx-0 {
+    margin-inline: calc(var(--spacing) * 0);
+  }
   .mx-0\.5 {
     margin-inline: calc(var(--spacing) * 0.5);
   }
